@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             BlockSeeder::class,
             SessionSeeder::class,
+            ExerciseCategorySeeder::class,
         ]);
     }
 }
