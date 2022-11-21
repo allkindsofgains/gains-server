@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->text('screenshot_url');
             $table->text('screenshot_path');
             $table->foreignId('user_id')->constrained('users', 'id')->cascadeOnDelete();
-            $table->foreignId('log_id')->constrained('log', 'id')->cascadeOnDelete();
+            $table->foreignId('log_id')->constrained('logs', 'id')->cascadeOnDelete();
             $table->foreignId('session_id')->constrained('sessions', 'id')->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();

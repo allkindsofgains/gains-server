@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             LogSeeder::class,
             SetSeeder::class,
             CommentSeeder::class,
+            VideoSeeder::class,
         ]);
     }
 }
