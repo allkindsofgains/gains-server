@@ -15,7 +15,7 @@ return new class extends Migration {
         Schema::create('api_keys', function (Blueprint $table) {
             $table->id();
             $table->text('key')->unique();
-            $table->foreignId('user_id')->constrained('user', 'id');
+            $table->foreignId('user_id')->constrained('users', 'id');
             $table->softDeletes();
             $table->timestamps();
         });
