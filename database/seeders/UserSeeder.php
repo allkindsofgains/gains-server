@@ -28,6 +28,7 @@ class UserSeeder extends Seeder
             'profile_picture_url' => fake()->imageUrl(50, 50, null, true),
             'remember_token' => Str::random(10),
         ]);
+
         User::factory(10)->create();
     }
 }
