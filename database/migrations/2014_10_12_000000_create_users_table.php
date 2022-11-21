@@ -18,12 +18,13 @@ return new class extends Migration {
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
             $table->string('role')->default('user');
             $table->date('date_of_birth')->nullable();
             $table->integer('weight')->nullable();
-            $table->text('profile_picture_path');
+            $table->text('profile_picture_path')->nullable();
+            $table->text('profile_picture_url')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
