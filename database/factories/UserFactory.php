@@ -24,7 +24,7 @@ class UserFactory extends Factory
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'first_name' => fake()->firstName(),
             'last_name' => fake()->lastName(),
-            "date_of_birth" => fake()->dateTimeThisDecade() ->format('d/m/Y'),
+            "date_of_birth" => fake()->dateTimeThisDecade() ->format('m/d/Y'),
             "weight" =>fake()->numberBetween(135, 225),
             'profile_picture_url' => fake()->imageUrl(50, 50, null, true),
             'remember_token' => Str::random(10),

@@ -21,8 +21,8 @@ class BlockFactory extends Factory
         return [
             'name' => fake()->text(20),
             'description' => fake()->text(),
-            'start_date' => fake()->date(),
-            'end_date' => fake()->date(),
+            'start_date' => fake()->date('m/d/Y'),
+            'end_date' => fake()->date('/m/d/Y'),
             'user_id' => User::factory(),
         ];
     }
