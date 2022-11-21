@@ -12,17 +12,16 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('logs', function (Blueprint $table) {
+        Schema::create('sets', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('notes')->nullable();
-            $table->boolean('collapsed')->default(false);
-            $table->boolean('private')->default(true);
-            $table->boolean('notes_visibility')->default(false);
+            $table->foreignId('exercise_id')->constrained('exercises', 'id')->cascadeOnDelete();
+            $table->integer('reps')->nullable();
+            $table->double('rpe', 1, 1)->nullable();
+            $table->integer('weight')->nullable();
             $table->foreignId('user_id')->constrained('users', 'id')->cascadeOnDelete();
             $table->foreignId('session_id')->constrained('sessions', 'id')->cascadeOnDelete();
-            $table->foreignId('exercise_id')->constrained('exercises', 'id')->cascadeOnDelete();
-            $table->json('json')->nullable();
+            $table->foreignId('log_id')->constrained('logs', 'id')->cascadeOnDelete();
+            $table->text('notes')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -35,6 +34,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('logs');
+        Schema::dropIfExists('sets');
     }
 };
