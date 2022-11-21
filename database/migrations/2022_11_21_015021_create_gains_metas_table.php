@@ -14,8 +14,8 @@ return new class extends Migration {
     {
         Schema::create('gains_metas', function (Blueprint $table) {
             $table->id();
-            $table->string('object');
-            $table->string('object_id');
+            $table->string('object')->nullable();
+            $table->string('object_id')->nullable();
             $table->foreignId('user_id')->constrained('users', 'id')->cascadeOnDelete();
             $table->json('json')->nullable();
             $table->softDeletes();
