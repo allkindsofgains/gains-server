@@ -20,8 +20,8 @@ class ExerciseFactory extends Factory
     {
         return [
             'name' => fake()->text(20),
-            'user_id' => User::factory(),
-            'exercise_category_id' => ExerciseCategory::factory()
+            'user_id' => User::all()->random()->id,
+            'exercise_category_id' => ExerciseCategory::all()->random()->id
         ];
     }
 }
