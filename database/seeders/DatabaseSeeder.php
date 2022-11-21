@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             ExerciseCategorySeeder::class,
             ExerciseSeeder::class,
             LogSeeder::class,
+            SetSeeder::class,
         ]);
     }
 }
