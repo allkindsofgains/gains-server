@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             ExerciseSeeder::class,
             LogSeeder::class,
             SetSeeder::class,
+            CommentSeeder::class,
         ]);
     }
 }
