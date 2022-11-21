@@ -15,7 +15,7 @@ return new class extends Migration {
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('block_id')->constrained('blocks', 'id')->cascadeOnDelete();
+            $table->foreignId('block_id')->nullable()->constrained('blocks', 'id')->cascadeOnDelete();
             $table->date('start_date');
             $table->date('end_date');
             $table->double('session_rpe', 1, 1);
